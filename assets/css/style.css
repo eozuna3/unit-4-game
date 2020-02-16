@@ -11,3 +11,7 @@ body{
 #gameInstructions{
   background-color: cornsilk;
 }
+
+.gemButtons{
+  background-color: rgb(251, 247, 247);
+}
