@@ -1,0 +1,13 @@
+body{
+  font-family: 'Vollkorn', serif, sans-serif;
+  background: url("../images/wp3977146-crystals-wallpapers.jpg");
+  font-size: 16px;
+}
+
+#mainSection{
+  color: red;
+}
+
+#gameInstructions{
+  background-color: cornsilk;
+}

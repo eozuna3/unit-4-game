@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Crystals Collector Game</title>
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -7,26 +8,73 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
   <meta name="author" content="Eduardo Ozuna">
   <meta name="description" content="Crystals Collector Game">
 </head>
+
 <body>
-  
+
+  <!---------------------  Jumbotron Header  --------------------------------->
+  <div class="jumbotron jumbotron-fluid bg-warning">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img id="gemimage1" src="assets/images/diamon-blue-gem.png" class="img-fluid" style="width: 100%;"
+            alt="Blue Diamond">
+        </div>
+        <div class="col-md-6 text-center mx-auto my-auto">
+          <h1 class="display-4 ">Crystals Collector</h1>
+        </div>
+        <div class="col-md-3">
+          <img id="gemimage2" src="assets/images/oval-blue-gem.png" class="img-fluid" style="width: 100%;"
+            alt="Blue Oval Gem">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!------------------------  Main Section  ---------------------------------->
+  <div id="mainSection" class="container">
+    <div class="row pt-5"></div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div id="gameInstructions"class="col-md-8 pt-4">
+        <p>You will be given a random number at the start of each game, as noted below</p>
+        <br>
+        <p>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</p>
+        <br>
+        <p> You win the game by matching your total score to the random number.  You lose the game if your total score goes above the random number.</p>
+        <br>
+        <p>The value fo each crystal is hidden from you until you click on it.</p>
+        <br>
+        <p>Each time you when the game and restart, the game will select a new number, and the values of each crystal will change as well.</p>
+      </div>
+    </div>
+    <div id="gemButtons" class="row">
+
+    </div>
+    <div id="randomNumber" class="row">
+
+    </div>
+    <div id="totalScore" class="row">
+
+    </div>
+  </div>
 
 
+  <!------------------------- Script tags ------------------------------------->
 
-
- <!----------------------- Script tags --------------------------------------->
-
- <script src="assets/javascript/game.js"></script>
- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-   crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-   crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-   crossorigin="anonymous"></script>
+  <script src="assets/javascript/game.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
