@@ -15,3 +15,16 @@ body{
 .gemButtons{
   background-color: rgb(251, 247, 247);
 }
+
+.numbers{
+  background-color: yellow;
+  font-weight: bolder;
+}
+
+#totalNumber{
+  font-size: 30px;
+}
+
+#selectedNumber{
+  font-size: 30px;
+}

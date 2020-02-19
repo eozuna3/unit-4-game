@@ -37,55 +37,91 @@
   <!------------------------  Main Section  ---------------------------------->
   <div id="mainSection" class="container">
     <div class="row pt-5"></div>
-    
+
     <!-------- Instruction HTML  -------->
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div id="gameInstructions"class="col-md-8 pt-4">
-        <p>You will be given a random number at the start of each game, as noted below</p>
-        <br>
-        <p>There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</p>
-        <br>
-        <p> You win the game by matching your total score to the random number.  You lose the game if your total score goes above the random number.</p>
-        <br>
-        <p>The value fo each crystal is hidden from you until you click on it.</p>
-        <br>
-        <p>Each time you when the game and restart, the game will select a new number, and the values of each crystal will change as well.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div id="gameInstructions" class="col-md-8 pt-4">
+          <p>You will be given a random number at the start of each game, as noted below</p>
+          <br>
+          <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+            total score.</p>
+          <br>
+          <p> You win the game by matching your total score to the random number. You lose the game if your total score
+            goes above the random number.</p>
+          <br>
+          <p>The value fo each crystal is hidden from you until you click on it.</p>
+          <br>
+          <p>Each time you when the game and restart, the game will select a new number, and the values of each crystal
+            will change as well.</p>
+        </div>
       </div>
     </div>
 
     <!----------------  Gem Button HTML  ----------------->
-    <div class="row pt-5"></div>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-2 gemButtons">
-        <img id="gemButton1" src="assets/images/drop-clear-red.png" class="img-fluid" alt="Image of Clear Red Teardrop Gemstone">
+    <div class="container">
+      <div class="row pt-5"></div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2 bg-transparent gemButtons">
+          <button type="button" class="btn btn-outline-light">
+            <img id="gemButton1" src="assets/images/drop-clear-red.png" class="img-thumbnail"
+              style="width: 125px; height: 125px;" alt="Image of Clear Red Teardrop Gemstone">
+          </button>
+        </div>
+        <div class="col-md-2 bg-transparent gemButtons">
+          <button type="button" class="btn btn-outline-light">
+            <img id="gemButton2" src="assets/images/green-gem.png" class="img-thumbnail"
+              style="width: 125px; height: 125px;" alt="Image of Green Gemstone">
+          </button>
+        </div>
+        <div class="col-md-2 bg-transparent gemButtons">
+          <button type="button" class="btn btn-outline-light">
+            <img id="gemButton3" src="assets/images/yellow-gems.png" class="img-thumbnail"
+              style="width: 125px; height: 125px;" alt="Image of Yellow Gemstones">
+          </button>
+        </div>
+        <div class="col-md-2 bg-transparent gemButtons">
+          <button type="button" class="btn btn-outline-light">
+            <img id="gemButton4" src="assets/images/drop-solid-red.png" class="img-thumbnail"
+              style="width: 125px; height: 125px;" alt="Image of Solid Red Teardrop Gemstone">
+          </button>
+        </div>
+        <div class="col-md-2"></div>
       </div>
-      <div class="col-md-2 gemButtons">
-        <img id="gemButton2" src="assets/images/green-gem.png" class="img-fluid" alt="Image of Green Gemstone">
-      </div>
-      <div class="col-md-2 gemButtons">
-        <img id="gemButton3" src="assets/images/yellow-gems.png" class="img-fluid" alt="Image of Yellow Gemstones">
-      </div>
-      <div class="col-md-2 gemButtons">
-        <img id="gemButton4" src="assets\images\drop-solid-red.png" class="img-fluid" alt="Image of Solid Red Teardrop Gemstone">
-      </div>
-      <div class="col-md-2"></div>
-
     </div>
-    <div id="randomNumber" class="row">
 
-    </div>
-    <div id="totalScore" class="row">
-
+    <!------------------  Numbers/Wins/Losses  ------------------------->
+    <div class="container">
+      <div class="row pt-5"></div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2 mr-2 numbers">
+          <p class="text-center">Selected Number</p>
+          <br>
+          <p id="selectedNumber" class="text-center numbers">test</p>
+        </div>
+        <div class="col-md-2 mr-2 numbers">
+          <p class="text-center">Your Total Number</p>
+          <br>
+          <p id="totalScore" class="text-center numbers">test</p>
+        </div>
+        <div class="col-md-2 numbers">
+          <p class="text-center">Wins:</p>
+          <p id="wins" class="text-center">0</p>
+          <br>
+          <p class="text-center">Losses:</p>
+          <p id="losses" class="text-center">0</p>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
     </div>
   </div>
 
 
   <!------------------------- Script tags ------------------------------------->
-
-  <script src="assets/javascript/game.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -94,6 +130,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
