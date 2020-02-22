@@ -85,6 +85,11 @@ function gameLoss(){
   alert("Please press space bar to start a new game.");
 }
 
+/*  var letter=sentence.charAt(index);
+    if(sentence.indexOf(letter)===index && sentence.indexOf(letter, index)===-1){
+      return letter
+    }*/
+
 //Onclick and Onkeyup functions--------------------------------------------------------
 button1.on("click", function(){
    totalScore = totalScore + parseInt(button1.val());
