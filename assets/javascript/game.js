@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
 
 /*----------------------------Variables--------------------------------------------*/
@@ -22,7 +22,7 @@ var button2 = $("#gemButton2");
 var button3 = $("#gemButton3");
 var button4 = $("#gemButton4");
 
-//Functions used in the game
+//Functions used in the game-----------------------------------------------
 
 //Function to select the random number to add up to 
 function randomNumber(){
@@ -51,84 +51,90 @@ function newGame(){
   button4.val(selectCrystalValues());
   console.log(button4.val());
 
+  button1.prop("disabled", false);
+  button2.prop("disabled", false);
+  button3.prop("disabled", false);
+  button4.prop("disabled", false);
+
   totalScoreText.text(totalScore);
   selectedNumberText.text(selectedNumber);
   announcementText.text("");
 }
 
-//Onclick functions
+//Function to update page when player wins
+function gameWin(){
+  wins++;
+  winsText.text(wins);
+  announcementText.text("You Win!!!");
+  completedgame = true;
+  button1.prop("disabled", true);
+  button2.prop("disabled", true);
+  button3.prop("disabled", true);
+  button4.prop("disabled", true);
+  alert("Please press space bar to start a new game.");
+}
+
+function gameLoss(){
+  losses++;
+  lossesText.text(losses);
+  announcementText.text("You Lose. :(");
+  button1.prop("disabled", true);
+  button2.prop("disabled", true);
+  button3.prop("disabled", true);
+  button4.prop("disabled", true);
+  alert("Please press space bar to start a new game.");
+}
+
+//Onclick and Onkeyup functions--------------------------------------------------------
 button1.on("click", function(){
-   console.log(parseInt(button1.val()));
-   console.log(typeof(parseInt(button1.val())));
    totalScore = totalScore + parseInt(button1.val());
    totalScoreText.text(totalScore);
 
    if(totalScore === selectedNumber){
-      wins++;
-      winsText.text(wins);
-      announcementText = "You Win!!!"
-      completedgame = true;
-      alert("Please press space bar to start a new game.");
+     gameWin();
    }else if(totalScore > selectedNumber){
-     losses++;
-     lossesText.text(losses);
-     announcementText = "You Lose. :("
-     alert("Please press space bar to start a new game.");
+    gameLoss();
    }
 });
 
 button2.on("click", function(){
-  console.log(parseInt(button2.val()));
-  console.log(typeof(parseInt(button2.val())));
   totalScore = totalScore + parseInt(button2.val());
   totalScoreText.text(totalScore);
 
   if(totalScore === selectedNumber){
-     wins++;
-     winsText.text(wins);
-     newGame();
+     gameWin();
   }else if(totalScore > selectedNumber){
-    losses++;
-    lossesText.text(losses);
-    newGame();
+    gameLoss();
   }
 });
 
 button3.on("click", function(){
-  console.log(parseInt(button3.val()));
-  console.log(typeof(parseInt(button3.val())));
   totalScore = totalScore + parseInt(button3.val());
   totalScoreText.text(totalScore);
 
   if(totalScore === selectedNumber){
-     wins++;
-     winsText.text(wins);
-     newGame();
+     gameWin();
   }else if(totalScore > selectedNumber){
-    losses++;
-    lossesText.text(losses);
-    newGame();
+    gameLoss();
   }
 });
 
 button4.on("click", function(){
-  console.log(parseInt(button4.val()));
-  console.log(typeof(parseInt(button4.val())));
   totalScore = totalScore + parseInt(button4.val());
   totalScoreText.text(totalScore);
 
   if(totalScore === selectedNumber){
-     wins++;
-     winsText.text(wins);
-     newGame();
+     gameWin();
   }else if(totalScore > selectedNumber){
-    losses++;
-    lossesText.text(losses);
-    newGame();
+    gameLoss();
   }
 });
 
-
+$(document).keyup(function (event){
+  if (event.keyCode == 32 || event.which == 32) {
+    newGame();
+  } 
+});
 
 newGame();
 });
