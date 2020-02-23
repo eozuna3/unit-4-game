@@ -148,4 +148,6 @@ $(document).ready(function () {
       newGame();
     }
   });
+
+  newGame();
 });
