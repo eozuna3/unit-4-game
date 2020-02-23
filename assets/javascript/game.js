@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
   /*----------------------------Variables--------------------------------------------*/
   // Creating variables for use in javascript
   var losses = 0;
@@ -8,7 +7,6 @@ $(document).ready(function () {
   var selectedNumber = 0;
   var totalScore = 0;
   var gemValueArray = [];
-
 
   // Create variables that hold references to specific tags in the HTML where we want to display and change items.
   var announcementText = $("#announcement")
@@ -21,7 +19,7 @@ $(document).ready(function () {
   var button3 = $("#gemButton3");
   var button4 = $("#gemButton4");
 
-  //Functions used in the game-----------------------------------------------
+  /*Functions used in the game-----------------------------------------------*/
 
   //Function to select the random number to add up to 
   function randomNumber() {
@@ -68,6 +66,7 @@ $(document).ready(function () {
     button3.prop("disabled", false);
     button4.prop("disabled", false);
 
+    console.log(totalScore);
     totalScoreText.text(totalScore);
     selectedNumberText.text(selectedNumber);
     announcementText.text("");
@@ -77,6 +76,7 @@ $(document).ready(function () {
   function gameWin() {
     wins++;
     winsText.text(wins);
+    gameCompleted = true;
     announcementText.text("You Win!!!");
     
     button1.prop("disabled", true);
@@ -89,6 +89,7 @@ $(document).ready(function () {
   function gameLoss() {
     losses++;
     lossesText.text(losses);
+    gameCompleted = true;
     announcementText.text("You Lose. :(");
     
     button1.prop("disabled", true);
@@ -123,7 +124,7 @@ $(document).ready(function () {
   button3.on("click", function () {
     totalScore = totalScore + parseInt(button3.val());
     totalScoreText.text(totalScore);
-
+    
     if (totalScore === selectedNumber) {
       gameWin();
     } else if (totalScore > selectedNumber) {
@@ -143,10 +144,8 @@ $(document).ready(function () {
   });
 
   $(document).keyup(function (event) {
-    if (event.keyCode == 32 || event.which == 32) {
+    if (event.keyCode === 32 || event.which === 32) {
       newGame();
     }
   });
-
-  newGame();
 });
